@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://duidx5rvd8tim"]
 
-[ext_resource type="Script" uid="uid://d3m01v05e7sd7" path="res://scripts/game_manager.gd" id="1_gee14"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://dsvas53a8u3d4" path="res://scenes/player.tscn" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://b0qpufugoiqwp" path="res://assets/sprites/world_tileset.png" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bckw0r8rnyknd" path="res://scenes/platform.tscn" id="3_iywne"]
-[ext_resource type="PackedScene" uid="uid://hjcmn2d0gbbm" path="res://scenes/coin.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bp30yewsedc6o" path="res://scenes/killzone.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://dcre2ebe3rova" path="res://scenes/green_enemy.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" path="res://scenes/green_enemy.tscn" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://do4q68pph0hxr" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
@@ -175,6 +175,21 @@ sources/0 = SubResource("TileSetAtlasSource_feb5d")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 
+[sub_resource type="Animation" id="Animation_lbhrr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(415, 85)]
+}
+
 [sub_resource type="Animation" id="Animation_lnu2h"]
 resource_name = "move"
 length = 1.5
@@ -190,21 +205,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(415, 85), Vector2(512, 85)]
-}
-
-[sub_resource type="Animation" id="Animation_lbhrr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(415, 85)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lbhrr"]
@@ -231,7 +231,7 @@ text = "This is the end you
 collected x coins"
 
 [node name="Player" parent="." instance=ExtResource("1_lnu2h")]
-position = Vector2(552, 32)
+position = Vector2(26, 52)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 6)
